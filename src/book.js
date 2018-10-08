@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 class Book extends Component {
     render() {
+        // check if thumbnail property exists, if it does pass thumbnail string, if not, pass empty string
+        let thumbnail = this.props.book.imageLinks ? this.props.book.imageLinks.thumbnail : '';
         return(
             <div className="book">
                 <div className="book-top">
@@ -15,7 +17,7 @@ class Book extends Component {
                             // https://stackoverflow.com/questions/47950833/react-why-is-double-brace-syntax-style-required-for-inline-styles
                             // on October 8, 2018
                             // End Attribution
-                            backgroundImage: `url(${this.props.book.imageLinks.thumbnail})` }}
+                            backgroundImage: `url(${thumbnail})` }}
                     ></div>
                     <div className="book-shelf-changer">
                         {/* make call to updateShelf each time change event is detected on the book shelf changer control */}

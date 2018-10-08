@@ -25,7 +25,7 @@ class BooksApp extends React.Component {
       console.log(this.state.booksList),
       <div className="app">
         <MainPage
-          // booksList state can be passed to MainPage component as immutable props
+          // booksList state can be passed to MainPage component as immutable props, books
           books={this.state.booksList}
         />
       </div>

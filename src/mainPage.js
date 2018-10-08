@@ -14,9 +14,19 @@ class MainPage extends Component {
                     <h2 className="bookshelf-title">Currently Reading</h2>
                     <div className="bookshelf-books">
                         <ol className="books-grid">
-                            <li>
-                                <Book />
-                            </li>
+                            {
+                                // access array passed in via props
+                                this.props.books
+                                    // filter over array, returning new array based on book's shelf property
+                                    .filter(book => book.shelf === 'currentlyReading')
+                                    // map over filtered array, adding to render
+                                    .map(book => (
+                                        // add unique key prop id to each book child as they're rendered
+                                        <li key={book.id}>
+                                            <Book />
+                                        </li>
+                                    ))
+                            }
                         </ol>
                     </div>
                     </div>
@@ -24,9 +34,19 @@ class MainPage extends Component {
                     <h2 className="bookshelf-title">Want to Read</h2>
                     <div className="bookshelf-books">
                         <ol className="books-grid">
-                            <li>
-                                <Book />
-                            </li>
+                            {
+                                // access array passed in via props
+                                this.props.books
+                                    // filter over array, returning new array based on book's shelf property
+                                    .filter(book => book.shelf === 'wantToRead')
+                                    // map over filtered array, adding to render
+                                    .map(book => (
+                                        // add unique key prop id to each book child as they're rendered
+                                        <li key={book.id}>
+                                            <Book />
+                                        </li>
+                                    ))
+                            }
                         </ol>
                     </div>
                     </div>
@@ -34,9 +54,19 @@ class MainPage extends Component {
                     <h2 className="bookshelf-title">Read</h2>
                     <div className="bookshelf-books">
                         <ol className="books-grid">
-                            <li>
-                                <Book />
-                            </li>
+                            {
+                                // access array passed in via props
+                                this.props.books
+                                    // filter over array, returning new array based on book's shelf property
+                                    .filter(book => book.shelf === 'read')
+                                    // map over filtered array, adding to render
+                                    .map(book => (
+                                        // add unique key prop id to each book child as they're rendered
+                                        <li key={book.id}>
+                                            <Book />
+                                        </li>
+                                    ))
+                            }
                         </ol>
                     </div>
                     </div>

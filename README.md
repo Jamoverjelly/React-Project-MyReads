@@ -90,3 +90,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
 
 For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## Working Attributions
+
+- Referenced helper code for in-lining styles in React JSX on StackOverflow: [React: why is double brace syntax, style{{..}}, required for inline styles](https://stackoverflow.com/questions/47950833/react-why-is-double-brace-syntax-style-required-for-inline-styles) on October 8, 2018

@@ -23,7 +23,10 @@ class MainPage extends Component {
                                     .map(book => (
                                         // add unique key prop id to each book child as they're rendered
                                         <li key={book.id}>
-                                            <Book />
+                                            <Book
+                                                // must pass props through to Book component to access book object properties
+                                                book={book}
+                                            />
                                         </li>
                                     ))
                             }
@@ -43,7 +46,10 @@ class MainPage extends Component {
                                     .map(book => (
                                         // add unique key prop id to each book child as they're rendered
                                         <li key={book.id}>
-                                            <Book />
+                                            <Book
+                                                // must pass props through to Book component to access book object properties
+                                                book={book}
+                                            />
                                         </li>
                                     ))
                             }
@@ -63,7 +69,10 @@ class MainPage extends Component {
                                     .map(book => (
                                         // add unique key prop id to each book child as they're rendered
                                         <li key={book.id}>
-                                            <Book />
+                                            <Book
+                                                // must pass props through to Book component to access book object properties
+                                                book={book}
+                                            />
                                         </li>
                                     ))
                             }

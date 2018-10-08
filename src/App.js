@@ -21,8 +21,6 @@ class BooksApp extends React.Component {
 
   render() {
     return (
-      // check state after initial render and after call to componentDidMount() completes
-      console.log(this.state.booksList),
       <div className="app">
         <MainPage
           // booksList state can be passed to MainPage component as immutable props, books

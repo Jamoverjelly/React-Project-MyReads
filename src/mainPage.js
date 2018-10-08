@@ -26,6 +26,10 @@ class MainPage extends Component {
                                             <Book
                                                 // must pass props through to Book component to access book object properties
                                                 book={book}
+                                                // pass updateShelf through to Book component
+                                                updateShelf={this.props.updateShelf}
+                                                // pass current shelf string to child component
+                                                currentShelf='currentlyReading'
                                             />
                                         </li>
                                     ))
@@ -49,6 +53,10 @@ class MainPage extends Component {
                                             <Book
                                                 // must pass props through to Book component to access book object properties
                                                 book={book}
+                                                // pass updateShelf through to Book component
+                                                updateShelf={this.props.updateShelf}
+                                                // pass current shelf string to child component
+                                                currentShelf='wantToRead'
                                             />
                                         </li>
                                     ))
@@ -72,6 +80,10 @@ class MainPage extends Component {
                                             <Book
                                                 // must pass props through to Book component to access book object properties
                                                 book={book}
+                                                // pass updateShelf through to Book component
+                                                updateShelf={this.props.updateShelf}
+                                                // pass current shelf string to child component
+                                                currentShelf='read'
                                             />
                                         </li>
                                     ))

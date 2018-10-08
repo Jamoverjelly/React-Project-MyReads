@@ -18,7 +18,17 @@ class Book extends Component {
                             backgroundImage: `url(${this.props.book.imageLinks.thumbnail})` }}
                     ></div>
                     <div className="book-shelf-changer">
-                        <select>
+                        {/* make call to updateShelf each time change event is detected on the book shelf changer control */}
+                        <select
+                            onChange={(event) => this.props.updateShelf(
+                                // pass parameters needed for update method up to parent
+                                this.props.book,
+                                // access shelf string from event.target
+                                event.target.value
+                            )}
+                            // access current shelf data passed from parent as prop
+                            value={this.props.currentShelf}
+                            >
                             <option value="move" disabled>Move to...</option>
                             <option value="currentlyReading">Currently Reading</option>
                             <option value="wantToRead">Want to Read</option>

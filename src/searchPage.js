@@ -1,6 +1,8 @@
-import React, { Component } from 'react';
-import * as BooksAPI from './BooksAPI';
+import React, { Component } from 'react'
 import Book from './book'
+
+import * as BooksAPI from './BooksAPI'
+import { Link } from 'react-router-dom'
 
 class SearchPage extends Component {
   state = {
@@ -48,7 +50,12 @@ class SearchPage extends Component {
     return (
       <div className="search-books">
         <div className="search-books-bar">
-          <a className="close-search" onClick={() => this.setState({ showSearchPage: false })}>Close</a>
+          {/* adding link functionality from React Router */}
+          <Link
+            // specify url path for viewing main page
+            to="/"
+            className="close-search"          
+          >Close</Link>
           
           <div className="search-books-input-wrapper">
             <input
@@ -67,17 +74,34 @@ class SearchPage extends Component {
             {/* search results will be rendered here */}
             {
               // map over current state of retrievedBooks array and render to the page
-              this.state.retrievedBooks.map(retrievedBook => (
-                // must add unique key prop to each retrieved book as they're rendered
-                <li key={retrievedBook.id}>
-                  <Book
-                    // pass retrievedBooks data to Book component
-                    book={retrievedBook}
-                    // pass updateShelf method to Book component using props
-                    updateShelf={this.props.updateShelf}
-                  />
-                </li>
-              ))
+              this.state.retrievedBooks.map(retrievedBook => {
+                // mutable variable shelf will specify default value, 'none' to pass for books which haven't been shelved
+                let shelf = 'none';
+                
+                // map over array of all books passed as props from BooksApp
+                this.props.booksList.map(book => (
+                  // check if current book id matches id of retrieved book
+                  book.id === retrievedBook.id ?
+                  // if match is truthy, set this book's shelf to same as book.shelf
+                  shelf = book.shelf :
+                  // if match is falsy, book is un-shelved so do nothing
+                  ''
+                ));
+                
+                return (
+                  // must add unique key prop to each retrieved book as they're rendered
+                  <li key={retrievedBook.id}>
+                    <Book
+                      // pass retrievedBooks data to Book component
+                      book={retrievedBook}
+                      // pass updateShelf method to Book component using props
+                      updateShelf={this.props.updateShelf}
+                      // set up attribute to pass default shelf state to Book component
+                      currentShelf={shelf}
+                    />
+                  </li>
+                )
+              })
             }
           </ol>
         </div>

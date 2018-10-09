@@ -1,5 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import Book from './book.js'
+
+import { Link } from 'react-router-dom'
 
 class MainPage extends Component {
     render() {
@@ -94,7 +96,11 @@ class MainPage extends Component {
                 </div>
                 </div>
                 <div className="open-search">
-                <a onClick={() => this.setState({ showSearchPage: true })}>Add a book</a>
+                    {/* adding link functionality from React Router */}
+                    <Link
+                      // specify url path for viewing search page
+                      to='/search'
+                    >Add a book</Link>
                 </div>
             </div>
         );

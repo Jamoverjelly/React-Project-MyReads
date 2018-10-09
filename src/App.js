@@ -1,8 +1,11 @@
 import React from 'react'
-import * as BooksAPI from './BooksAPI'
 import './App.css'
+
 import SearchPage from './searchPage'
 import MainPage from './mainPage'
+
+import * as BooksAPI from './BooksAPI'
+import { Route } from 'react-router-dom'
 
 class BooksApp extends React.Component {
   state = {
@@ -33,16 +36,24 @@ class BooksApp extends React.Component {
   render() {
     return (
       <div className="app">
-        <MainPage
-          // booksList state can be passed to MainPage component as immutable props, books
-          books={this.state.booksList}
-          // provide access to updateShelf method in MainPage component, passing data down through children components
-          updateShelf={this.updateShelf}
-        />
-        {/* <SearchPage
-          // provide access to updateShelf method in SearchPage component
-          updateShelf={this.updateShelf}
-        /> */}
+        {/* route for rendering main page */}
+        <Route exact path='/' render={() => (
+          <MainPage
+            // booksList state can be passed to MainPage component as immutable props, books
+            books={this.state.booksList}
+            // provide access to updateShelf method in MainPage component, passing data down through children components
+            updateShelf={this.updateShelf}
+          />
+        )}/>
+        {/* route for rendering search page */}
+        <Route path='/search' render={() => (
+          <SearchPage
+            // provide access to updateShelf method in SearchPage component
+            updateShelf={this.updateShelf}
+            // send current state of booksList to SearchPage component
+            booksList={this.state.booksList}
+          />
+        )}/>
       </div>
     )
   }

@@ -1,96 +1,69 @@
 # MyReads Project
 
-This is the starter template for the final assessment project for Udacity's React Fundamentals course. The goal of this template is to save you time by providing a static example of the CSS and HTML markup that may be used, but without any of the React code that is needed to complete the project. If you choose to start with this template, your job will be to add interactivity to the app by refactoring the static code in this template.
+## Overview
 
-Of course, you are free to start this project from scratch if you wish! Just be sure to use [Create React App](https://github.com/facebookincubator/create-react-app) to bootstrap the project.
+Project Six for Udacity's Front End Nanodegree involved working with starter code for a hard-coded bookshelf application called myReads which was bootstrapped with Create React App. From this point, React's key capabilities for providing upgraded functionality to the app's front-end experience were integrated and tested.  Now that the project is completed, myReads allows its users to select and categorize a collection of books as well as search for new books to add to their collection.
 
-## TL;DR
 
-To get started developing right away:
+### Learning React to Complete The myReads Project
 
-* install all project dependencies with `npm install`
-* start the development server with `npm start`
+This project challenged my ability to research and analyze the lesson material as well as consult React's own documentation to understand and then integrate the fundamental concepts and architecture for building the front-end aspect of a React application.
 
-## What You're Getting
-```bash
-├── CONTRIBUTING.md
-├── README.md - This file.
-├── SEARCH_TERMS.md # The whitelisted short collection of available search terms for you to use with your app.
-├── package.json # npm package manager file. It's unlikely that you'll need to modify this.
-├── public
-│   ├── favicon.ico # React Icon, You may change if you wish.
-│   └── index.html # DO NOT MODIFY
-└── src
-    ├── App.css # Styles for your app. Feel free to customize this as you desire.
-    ├── App.js # This is the root of your app. Contains static HTML right now.
-    ├── App.test.js # Used for testing. Provided with Create React App. Testing is encouraged, but not required.
-    ├── BooksAPI.js # A JavaScript API for the provided Udacity backend. Instructions for the methods are below.
-    ├── icons # Helpful images for your app. Use at your discretion.
-    │   ├── add.svg
-    │   ├── arrow-back.svg
-    │   └── arrow-drop-down.svg
-    ├── index.css # Global styles. You probably won't need to change anything here.
-    └── index.js # You should not need to modify this file. It is used for DOM rendering only.
-```
+The main concepts involved working with components and their lifecycle in addition to understanding props and state within React's data flow to render the UI. In regards to learning important features of React's component lifecycle, the project also required rendering data fetched from an external resource to incorporate into the render
 
-Remember that good React design practice is to create new JS files for each component and use import/require statements to include them where they are needed.
+Finally, React Router was also added to the project as a way to create the experience of a single-page application for myReads.
 
-## Backend Server
 
-To simplify your development process, we've provided a backend server for you to develop against. The provided file [`BooksAPI.js`](src/BooksAPI.js) contains the methods you will need to perform necessary operations on the backend:
+## Running The Project
 
-* [`getAll`](#getall)
-* [`update`](#update)
-* [`search`](#search)
+1. Clone or download this repository
+2. Install the project dependencies using `npm install`
+3. Run the development server with `npm start`
+4. In your browser, navigate to http://localhost:3000 to view a running instance of the application
 
-### `getAll`
 
-Method Signature:
+## Navigating myReads App
 
-```js
-getAll()
-```
+The main page of the website allows the user to track and categorize their collection of books onto three "bookshelves" which specify the user's reading status for a given book:
+- **Currently Reading**
+- **Want to Read**
+- **Read**
 
-* Returns a Promise which resolves to a JSON object containing a collection of book objects.
-* This collection represents the books currently in the bookshelves in your app.
+Using the control tied the display of each book instance, a user can sort which shelf their book is organized to or select 'None' to remove it from their collection.
 
-### `update`
+In the bottom-right of the UI, the user can click the 'Add' icon button to navigate to the application's search page.  On the search page, an input field is provided where the user can enter a search term which dynamically updates the display of available books.  This display is filtered according to the text entered into the search input.  myReads is limited to a select collection of terms.  To view the allowed search-terms, visit the [SEARCH_TERMS.md](https://github.com/Jamoverjelly/React-Project-MyReads/blob/master/SEARCH_TERMS.md) file from the project's starter repository.
 
-Method Signature:
+Note that because React Router is integrated into the project's dependencies, the user is able to navigate between the pages of the app using either the controls provided in the UI or by providing the url page address in the browser's address bar:
+- path: "/" for the myReads main page
+- path: "/search" for the myReads search page
 
-```js
-update(book, shelf)
-```
 
-* book: `<Object>` containing at minimum an `id` attribute
-* shelf: `<String>` contains one of ["wantToRead", "currentlyReading", "read"]  
-* Returns a Promise which resolves to a JSON object containing the response data of the POST request
+## Resources
 
-### `search`
+#### Course Resources
 
-Method Signature:
+- [Udacity Course: React Fundamentals](https://www.udacity.com/course/react-nanodegree--nd019) from Udacity's React Nanodegree
 
-```js
-search(query)
-```
+- [Starter Code](https://github.com/udacity/reactnd-project-myreads-starter)
 
-* query: `<String>`
-* Returns a Promise which resolves to a JSON object containing a collection of a maximum of 20 book objects.
-* These books do not know which shelf they are on. They are raw results only. You'll need to make sure that books have the correct state while on the search page.
+- [Project Spec](https://review.udacity.com/#!/rubrics/918/view)
 
-## Important
-The backend API uses a fixed set of cached search results and is limited to a particular set of search terms, which can be found in [SEARCH_TERMS.md](SEARCH_TERMS.md). That list of terms are the _only_ terms that will work with the backend, so don't be surprised if your searches for Basket Weaving or Bubble Wrap don't come back with any results.
 
-## Create React App
+#### External Resources
 
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app). You can find more information on how to perform common tasks [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
+- [React Docs](https://reactjs.org/docs/getting-started.html?no-cache=1)
 
-## Contributing
+- [React Docs: Thinking in React](https://reactjs.org/docs/thinking-in-react.html)
 
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
+- [MDN: Conditional (ternary) Operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator)
 
-For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
+- This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app). You can find more information on how to perform common tasks [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
 
-## Working Attributions
+- [React Router](https://reacttraining.com/react-router/core/guides/philosophy) was integrated into the project to create a single-page experience in the app.
+
+
+#### Attributions
 
 - Referenced helper code for in-lining styles in React JSX on StackOverflow: [React: why is double brace syntax, style{{..}}, required for inline styles](https://stackoverflow.com/questions/47950833/react-why-is-double-brace-syntax-style-required-for-inline-styles) on October 8, 2018
+
+- Watched and reviewed notes from [Maeva NAP's Study Jam 21/07 - FEND P7 - My Reads](https://www.youtube.com/watch?v=i6L2jLHV9j8) on YouTube for analyzing initial project action steps and required functionality on October 3, 2018

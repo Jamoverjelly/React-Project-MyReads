@@ -33,13 +33,16 @@ class BooksApp extends React.Component {
   render() {
     return (
       <div className="app">
-        {/* <MainPage
+        <MainPage
           // booksList state can be passed to MainPage component as immutable props, books
           books={this.state.booksList}
           // provide access to updateShelf method in MainPage component, passing data down through children components
           updateShelf={this.updateShelf}
+        />
+        {/* <SearchPage
+          // provide access to updateShelf method in SearchPage component
+          updateShelf={this.updateShelf}
         /> */}
-        <SearchPage />
       </div>
     )
   }

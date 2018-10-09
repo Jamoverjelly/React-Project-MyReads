@@ -71,8 +71,10 @@ class SearchPage extends Component {
                 // must add unique key prop to each retrieved book as they're rendered
                 <li key={retrievedBook.id}>
                   <Book
-                    // pass retrievedBooks data to Book component as props
+                    // pass retrievedBooks data to Book component
                     book={retrievedBook}
+                    // pass updateShelf method to Book component using props
+                    updateShelf={this.props.updateShelf}
                   />
                 </li>
               ))

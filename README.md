@@ -2,8 +2,7 @@
 
 ## Overview
 
-Project Six for Udacity's Front End Nanodegree involved working with starter code for a hard-coded bookshelf application called myReads which was bootstrapped with Create React App. From this point, React's key capabilities for providing upgraded functionality to the app's front-end experience were integrated and tested.  Now that the project is completed, myReads allows its users to select and categorize a collection of books as well as search for new books to add to their collection.
-
+Project Six for Udacity's Front End Nanodegree involved working with starter code for a hard-coded bookshelf application called myReads which was bootstrapped with Create React App. From this point, React's key capabilities for providing upgraded functionality to the app's front-end experience were integrated and tested. Now that the project is completed, myReads allows its users to select and categorize a collection of books as well as search for new books to add to their collection.
 
 ### Learning React to Complete The myReads Project
 
@@ -13,6 +12,9 @@ The main concepts involved working with components and their lifecycle in additi
 
 Finally, React Router was also added to the project as a way to create the experience of a single-page application for myReads.
 
+## View The Project Online
+
+You can view a deployed version of my myReads application at the following address: http://jamoverjelly.github.io/React-Project-MyReads/
 
 ## Running The Project
 
@@ -21,22 +23,22 @@ Finally, React Router was also added to the project as a way to create the exper
 3. Run the development server with `npm start`
 4. In your browser, navigate to http://localhost:3000 to view a running instance of the application
 
-
 ## Navigating myReads App
 
 The main page of the website allows the user to track and categorize their collection of books onto three "bookshelves" which specify the user's reading status for a given book:
+
 - **Currently Reading**
 - **Want to Read**
 - **Read**
 
 Using the control tied the display of each book instance, a user can sort which shelf their book is organized to or select 'None' to remove it from their collection.
 
-In the bottom-right of the UI, the user can click the 'Add' icon button to navigate to the application's search page.  On the search page, an input field is provided where the user can enter a search term which dynamically updates the display of available books.  This display is filtered according to the text entered into the search input.  myReads is limited to a select collection of terms.  To view the allowed search-terms, visit the [SEARCH_TERMS.md](https://github.com/Jamoverjelly/React-Project-MyReads/blob/master/SEARCH_TERMS.md) file from the project's starter repository.
+In the bottom-right of the UI, the user can click the 'Add' icon button to navigate to the application's search page. On the search page, an input field is provided where the user can enter a search term which dynamically updates the display of available books. This display is filtered according to the text entered into the search input. myReads is limited to a select collection of terms. To view the allowed search-terms, visit the [SEARCH_TERMS.md](https://github.com/Jamoverjelly/React-Project-MyReads/blob/master/SEARCH_TERMS.md) file from the project's starter repository.
 
 Note that because React Router is integrated into the project's dependencies, the user is able to navigate between the pages of the app using either the controls provided in the UI or by providing the url page address in the browser's address bar:
+
 - path: "/" for the myReads main page
 - path: "/search" for the myReads search page
-
 
 ## Resources
 
@@ -47,7 +49,6 @@ Note that because React Router is integrated into the project's dependencies, th
 - [Starter Code](https://github.com/udacity/reactnd-project-myreads-starter)
 
 - [Project Spec](https://review.udacity.com/#!/rubrics/918/view)
-
 
 #### External Resources
 
@@ -60,7 +61,6 @@ Note that because React Router is integrated into the project's dependencies, th
 - This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app). You can find more information on how to perform common tasks [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
 
 - [React Router](https://reacttraining.com/react-router/core/guides/philosophy) was integrated into the project to create a single-page experience in the app.
-
 
 #### Attributions
 

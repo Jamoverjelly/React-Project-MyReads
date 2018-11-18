@@ -2,6 +2,7 @@
   "homepage": "http://jamoverjelly.github.io/React-Project-MyReads/",
   "dependencies": {
     "escape-string-regexp": "^1.0.5",
+    "npm": "^6.4.1",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
